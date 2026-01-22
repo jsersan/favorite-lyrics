@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Búsqueda de Letras de Canciones</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Búsqueda de letras de canciones fetch con almacenamiento de favoritos</h1>
+    </header>
+
+    <main class="main-content">
+      <div id="favoritesSection" class="favorites-section hidden">
+        <h2>⭐ Mis Favoritas</h2>
+        <div id="favoritesList" class="favorites-list"></div>
+      </div>
+
+      <div class="search-box">
+        <h2>Busca por artista y Canción</h2>
+        
+        <form id="searchForm" class="search-form">
+          <div class="form-group">
+            <label for="artist">Artista</label>
+            <input 
+              type="text" 
+              id="artist" 
+              name="artist"
+              placeholder="The Beatles"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="title">Canción</label>
+            <input 
+              type="text" 
+              id="title" 
+              name="title"
+              placeholder="Help"
+              required
+            >
+          </div>
+
+          <div class="button-group">
+            <button 
+              type="submit" 
+              class="btn btn-search"
+              id="searchBtn"
+            >
+              Buscar
+            </button>
+            
+            <button 
+              type="button" 
+              class="btn btn-clear"
+              id="clearBtn"
+            >
+              Limpiar
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div id="loadingMessage" class="loading-message hidden">
+        <div class="spinner"></div>
+        <p>Buscando letras...</p>
+      </div>
+
+      <div id="errorMessage" class="error-box hidden">
+        <p></p>
+      </div>
+
+      <div id="lyricsBox" class="lyrics-box hidden">
+        <div class="lyrics-header">
+          <h3 id="lyricsTitle"></h3>
+          <button id="favoriteBtn" class="btn-icon btn-favorite" title="Añadir a favoritos">
+            ⭐
+          </button>
+        </div>
+        <div id="lyricsContent" class="lyrics-content"></div>
+      </div>
+    </main>
+  </div>
+
+  <scrip src="script/app.js"></scrip>
+</body>
+</html>
